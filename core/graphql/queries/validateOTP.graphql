@@ -1,0 +1,8 @@
+query validateOTP(
+  $username: String!
+  $otp: String!
+) {
+  validateOTP(command: { username: $username, otp: $otp }) {
+    succeeded
+  }
+}

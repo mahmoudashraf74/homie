@@ -1,0 +1,28 @@
+query slugInfo(
+    $slug: String
+    $storeId: String
+    $cultureName: String
+    $permalink: String
+) {
+  slugInfo(
+      slug: $slug
+      storeId: $storeId
+      cultureName: $cultureName
+      permalink: $permalink
+  ) {
+    entityInfo {
+      id
+      name
+      semanticUrl
+      pageTitle
+      metaDescription
+      imageAltDescription
+      metaKeywords
+      storeId
+      objectId
+      objectType
+      isActive
+      languageCode
+    }
+  }
+}

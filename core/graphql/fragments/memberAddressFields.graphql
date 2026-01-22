@@ -1,0 +1,27 @@
+fragment memberAddressFields on MemberAddressTypeExtend {
+	id
+	key
+	name
+	firstName
+	middleName
+	lastName
+	line1
+	city
+	governorate
+	countryCode
+	countryName
+	postalCode @include(if: $withPostalCode)
+	zip
+	isDefault
+	phone
+	email
+	description
+	addressType
+	buildingNumber
+	floorNumber
+	apartmentNumber
+	regionName
+	latitude
+	longitude
+	outerId
+}

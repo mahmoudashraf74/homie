@@ -1,0 +1,26 @@
+query evaluateDynamicContent(
+    $storeId: String!
+    $cultureName: String!
+    $placeName: String
+
+) {
+  evaluateDynamicContent(
+      storeId: $storeId
+      cultureName: $cultureName
+      placeName:$placeName
+  ) {
+    items {
+      id
+      contentType
+      name
+      description
+      priority
+      dynamicProperties(cultureName: $cultureName) {
+        name
+        valueType
+        dynamicPropertyValueType
+        value
+      }
+    }
+  }
+}

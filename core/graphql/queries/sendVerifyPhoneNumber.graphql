@@ -1,0 +1,3 @@
+query sendVerifyPhoneNumber($command: InputSendVerifyPhoneNumberType!) {
+  sendVerifyPhoneNumber(command: $command)
+}

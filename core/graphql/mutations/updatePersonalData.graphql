@@ -1,0 +1,9 @@
+mutation updatePersonalData($command: InputUpdatePersonalDataTypeExtend!) {
+  updatePersonalData(command: $command) {
+    succeeded
+    errors {
+      code
+      description
+    }
+  }
+}
