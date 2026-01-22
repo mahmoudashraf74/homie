@@ -40,7 +40,7 @@ const Header = () => {
 						/>
 					</Link>
 				</div>
-				<section className="flex items-center gap-4 h-full">
+				<section className="flex items-center gap-2 md:gap-4 h-full">
 					<HeaderLocalizeButton />
 					<HeaderWishlistButton />
 					<HeaderCartButton />
