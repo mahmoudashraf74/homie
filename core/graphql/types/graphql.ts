@@ -924,34 +924,6 @@ export type CustomerComplaintResult = {
   succeeded: Scalars['Boolean']['output'];
 };
 
-/** A connection from an object to a list of objects of type `CustomerOrder`. */
-export type CustomerOrderConnection = {
-  __typename?: 'CustomerOrderConnection';
-  /** A list of all of the edges returned in the connection. */
-  edges?: Maybe<Array<Maybe<CustomerOrderEdge>>>;
-  /** Filter facets */
-  filter_facets: Array<FilterFacet>;
-  /** A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for "{ edges { node } }" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the "cursor" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full "{ edges { node } } " version should be used instead. */
-  items?: Maybe<Array<Maybe<CustomerOrderType>>>;
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo;
-  /** Range facets */
-  range_facets: Array<RangeFacet>;
-  /** Term facets */
-  term_facets: Array<TermFacet>;
-  /** A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing "5" as the argument to `first`, then fetch the total count so it could display "5 of 83", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`. */
-  totalCount?: Maybe<Scalars['Int']['output']>;
-};
-
-/** An edge in a connection from an object to another object of type `CustomerOrder`. */
-export type CustomerOrderEdge = {
-  __typename?: 'CustomerOrderEdge';
-  /** A cursor for use in pagination */
-  cursor: Scalars['String']['output'];
-  /** The item at the end of the edge */
-  node?: Maybe<CustomerOrderType>;
-};
-
 export type CustomerOrderType = {
   __typename?: 'CustomerOrderType';
   addresses: Array<OrderAddressType>;
@@ -1035,6 +1007,129 @@ export type CustomerOrderTypeInPaymentsArgs = {
   after?: InputMaybe<Scalars['Int']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CustomerOrderTypeExtend = {
+  __typename?: 'CustomerOrderTypeExtend';
+  addresses: Array<OrderAddressType>;
+  /** Available payment methods */
+  availablePaymentMethods: Array<OrderPaymentMethodType>;
+  cancelReason?: Maybe<Scalars['String']['output']>;
+  cancelledDate?: Maybe<Scalars['DateTime']['output']>;
+  channelId?: Maybe<Scalars['String']['output']>;
+  comment?: Maybe<Scalars['String']['output']>;
+  coupons: Array<Scalars['String']['output']>;
+  createdBy?: Maybe<Scalars['String']['output']>;
+  createdDate: Scalars['DateTime']['output'];
+  currency: CurrencyType;
+  customerId: Scalars['String']['output'];
+  customerName?: Maybe<Scalars['String']['output']>;
+  discountAmount: MoneyType;
+  discountTotal: MoneyType;
+  discountTotalWithTax: MoneyType;
+  discounts: Array<OrderDiscountType>;
+  /** Customer order dynamic property values */
+  dynamicProperties: Array<DynamicPropertyValueType>;
+  employeeId?: Maybe<Scalars['String']['output']>;
+  employeeName?: Maybe<Scalars['String']['output']>;
+  fee: MoneyType;
+  feeTotal: MoneyType;
+  feeTotalWithTax: MoneyType;
+  feeWithTax: MoneyType;
+  id: Scalars['String']['output'];
+  inPayments: Array<PaymentInType>;
+  isApproved: Scalars['Boolean']['output'];
+  isCancelled: Scalars['Boolean']['output'];
+  isPrototype: Scalars['Boolean']['output'];
+  items: Array<OrderLineItemType>;
+  languageCode?: Maybe<Scalars['String']['output']>;
+  modifiedBy?: Maybe<Scalars['String']['output']>;
+  modifiedDate?: Maybe<Scalars['DateTime']['output']>;
+  number: Scalars['String']['output'];
+  objectType: Scalars['String']['output'];
+  operationType: Scalars['String']['output'];
+  /** Order status change history */
+  orderHistory?: Maybe<StatusChangeConnection>;
+  organizationId?: Maybe<Scalars['String']['output']>;
+  organizationName?: Maybe<Scalars['String']['output']>;
+  outerId?: Maybe<Scalars['String']['output']>;
+  parentOperationId?: Maybe<Scalars['String']['output']>;
+  paymentDiscountTotal: MoneyType;
+  paymentDiscountTotalWithTax: MoneyType;
+  paymentSubTotal: MoneyType;
+  paymentSubTotalWithTax: MoneyType;
+  paymentTaxTotal: MoneyType;
+  paymentTotal: MoneyType;
+  paymentTotalWithTax: MoneyType;
+  purchaseOrderNumber?: Maybe<Scalars['String']['output']>;
+  shipments: Array<OrderShipmentType>;
+  shippingDiscountTotal: MoneyType;
+  shippingDiscountTotalWithTax: MoneyType;
+  shippingSubTotal: MoneyType;
+  shippingSubTotalWithTax: MoneyType;
+  shippingTaxTotal: MoneyType;
+  shippingTotal: MoneyType;
+  shippingTotalWithTax: MoneyType;
+  shoppingCartId?: Maybe<Scalars['String']['output']>;
+  status?: Maybe<Scalars['String']['output']>;
+  statusDisplayValue?: Maybe<Scalars['String']['output']>;
+  storeId: Scalars['String']['output'];
+  storeName?: Maybe<Scalars['String']['output']>;
+  subTotal: MoneyType;
+  subTotalDiscount: MoneyType;
+  subTotalDiscountWithTax: MoneyType;
+  subTotalTaxTotal: MoneyType;
+  subTotalWithTax: MoneyType;
+  subscriptionId?: Maybe<Scalars['String']['output']>;
+  subscriptionNumber?: Maybe<Scalars['String']['output']>;
+  taxDetails: Array<OrderTaxDetailType>;
+  taxPercentRate: Scalars['Decimal']['output'];
+  taxTotal: MoneyType;
+  taxType?: Maybe<Scalars['String']['output']>;
+  total: MoneyType;
+};
+
+
+export type CustomerOrderTypeExtendInPaymentsArgs = {
+  after?: InputMaybe<Scalars['Int']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type CustomerOrderTypeExtendOrderHistoryArgs = {
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  sortBy?: InputMaybe<Scalars['String']['input']>;
+  sortDirection?: InputMaybe<Scalars['String']['input']>;
+  take?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** A connection from an object to a list of objects of type `CustomerOrderTypeExtend`. */
+export type CustomerOrderTypeExtendConnection = {
+  __typename?: 'CustomerOrderTypeExtendConnection';
+  /** A list of all of the edges returned in the connection. */
+  edges?: Maybe<Array<Maybe<CustomerOrderTypeExtendEdge>>>;
+  /** Filter facets */
+  filter_facets: Array<FilterFacet>;
+  /** A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for "{ edges { node } }" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the "cursor" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full "{ edges { node } } " version should be used instead. */
+  items?: Maybe<Array<Maybe<CustomerOrderTypeExtend>>>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** Range facets */
+  range_facets: Array<RangeFacet>;
+  /** Term facets */
+  term_facets: Array<TermFacet>;
+  /** A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing "5" as the argument to `first`, then fetch the total count so it could display "5 of 83", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`. */
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+/** An edge in a connection from an object to another object of type `CustomerOrderTypeExtend`. */
+export type CustomerOrderTypeExtendEdge = {
+  __typename?: 'CustomerOrderTypeExtendEdge';
+  /** A cursor for use in pagination */
+  cursor: Scalars['String']['output'];
+  /** The item at the end of the edge */
+  node?: Maybe<CustomerOrderTypeExtend>;
 };
 
 export type CustomerReview = {
@@ -3514,7 +3609,7 @@ export type Mutations = {
   addOrUpdateCartPayment?: Maybe<CartType>;
   addOrUpdateCartShipment?: Maybe<CartType>;
   addOrUpdateCartShipmentExtend?: Maybe<CartType>;
-  addOrUpdateOrderPayment?: Maybe<CustomerOrderType>;
+  addOrUpdateOrderPayment?: Maybe<CustomerOrderTypeExtend>;
   addWishlistBulkItem?: Maybe<BulkWishlistType>;
   addWishlistItem?: Maybe<WishlistType>;
   addWishlistItems?: Maybe<WishlistType>;
@@ -3544,7 +3639,7 @@ export type Mutations = {
   createConfiguredLineItem?: Maybe<ConfigurationLineItemType>;
   createContact?: Maybe<ContactTypeExtend>;
   createCustomerComplaint?: Maybe<CustomerComplaintResult>;
-  createOrderFromCart?: Maybe<CustomerOrderType>;
+  createOrderFromCart?: Maybe<CustomerOrderTypeExtend>;
   createOrganization?: Maybe<Organization>;
   createReturn?: Maybe<Return>;
   createReview?: Maybe<CreateReviewResult>;
@@ -3605,10 +3700,10 @@ export type Mutations = {
   updateMemberAddresses?: Maybe<MemberType>;
   updateMemberAddressesExtended?: Maybe<MemberType>;
   updateMemberDynamicProperties?: Maybe<MemberType>;
-  updateOrderDynamicProperties?: Maybe<CustomerOrderType>;
-  updateOrderItemDynamicProperties?: Maybe<CustomerOrderType>;
-  updateOrderPaymentDynamicProperties?: Maybe<CustomerOrderType>;
-  updateOrderShipmentDynamicProperties?: Maybe<CustomerOrderType>;
+  updateOrderDynamicProperties?: Maybe<CustomerOrderTypeExtend>;
+  updateOrderItemDynamicProperties?: Maybe<CustomerOrderTypeExtend>;
+  updateOrderPaymentDynamicProperties?: Maybe<CustomerOrderTypeExtend>;
+  updateOrderShipmentDynamicProperties?: Maybe<CustomerOrderTypeExtend>;
   updateOrganization?: Maybe<Organization>;
   updatePersonalData?: Maybe<IdentityResultType>;
   updateRole?: Maybe<IdentityResultType>;
@@ -4726,7 +4821,7 @@ export type PaymentInType = {
   objectType: Scalars['String']['output'];
   operationType: Scalars['String']['output'];
   /** Associated Order */
-  order: CustomerOrderType;
+  order: CustomerOrderTypeExtend;
   orderId?: Maybe<Scalars['String']['output']>;
   organizationId?: Maybe<Scalars['String']['output']>;
   organizationName?: Maybe<Scalars['String']['output']>;
@@ -5391,13 +5486,13 @@ export type Query = {
   newsArticleAuthor?: Maybe<NewsArticleAuthor>;
   newsArticleTags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   newsArticles?: Maybe<NewsArticleContentConnection>;
-  order?: Maybe<CustomerOrderType>;
+  order?: Maybe<CustomerOrderTypeExtend>;
   orderLineItemStatuses?: Maybe<LocalizedSettingResponseType>;
   orderStatuses?: Maybe<LocalizedSettingResponseType>;
-  orders?: Maybe<CustomerOrderConnection>;
+  orders?: Maybe<CustomerOrderTypeExtendConnection>;
   organization?: Maybe<Organization>;
   organizationContracts?: Maybe<ContractConnection>;
-  organizationOrders?: Maybe<CustomerOrderConnection>;
+  organizationOrders?: Maybe<CustomerOrderTypeExtendConnection>;
   organizations?: Maybe<OrganizationConnection>;
   page?: Maybe<PageType>;
   pageDocument?: Maybe<PageDocumentType>;
@@ -6504,6 +6599,38 @@ export type SlugInfoResponseType = {
   entityInfo?: Maybe<SeoInfo>;
   /** Target URL when SEO is null */
   redirectUrl?: Maybe<Scalars['String']['output']>;
+};
+
+/** A connection from an object to a list of objects of type `StatusChange`. */
+export type StatusChangeConnection = {
+  __typename?: 'StatusChangeConnection';
+  /** A list of all of the edges returned in the connection. */
+  edges?: Maybe<Array<Maybe<StatusChangeEdge>>>;
+  /** A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for "{ edges { node } }" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the "cursor" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full "{ edges { node } } " version should be used instead. */
+  items?: Maybe<Array<Maybe<StatusChangeType>>>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing "5" as the argument to `first`, then fetch the total count so it could display "5 of 83", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`. */
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+/** An edge in a connection from an object to another object of type `StatusChange`. */
+export type StatusChangeEdge = {
+  __typename?: 'StatusChangeEdge';
+  /** A cursor for use in pagination */
+  cursor: Scalars['String']['output'];
+  /** The item at the end of the edge */
+  node?: Maybe<StatusChangeType>;
+};
+
+export type StatusChangeType = {
+  __typename?: 'StatusChangeType';
+  /** Id */
+  id: Scalars['String']['output'];
+  status?: Maybe<Scalars['String']['output']>;
+  /** Status date */
+  statusDate: Scalars['DateTime']['output'];
+  statusDisplayValue?: Maybe<Scalars['String']['output']>;
 };
 
 export type StoreResponseTypeExtend = {

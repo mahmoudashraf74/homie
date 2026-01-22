@@ -1,7 +1,7 @@
-export default function NotFound() {
+export default function Loading() {
 	return (
 		<div className="flex min-h-screen items-center justify-center">
-			NotFound ...
+			Loading...
 		</div>
 	);
 }
