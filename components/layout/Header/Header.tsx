@@ -10,7 +10,7 @@ import HeaderProfileButton from "./HeaderProfileButton";
 const Header = () => {
 	return (
 		<header className="sticky top-0 z-50 bg-white lg:py-3 max-lg:pt-[18px] max-lg:pb-3 border-b border-border-secondary">
-			<section className="flex items-center lg:2xl:justify-between lg:gap-6 gap-5 justify-between px-1 lg:px-[inherit] px-0">
+			<section className="flex items-center lg:2xl:justify-between lg:gap-6 gap-5 justify-between section-inline-padding lg:px-[inherit] px-0">
 				{/* Logo & Search Section - Desktop */}
 				<section className="lg:flex items-center gap-7 w-[70%] hidden">
 					<Link href="/" className="flex-shrink-0">
