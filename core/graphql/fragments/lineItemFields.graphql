@@ -1,0 +1,52 @@
+fragment lineItemFields on LineItemType {
+  id
+  name
+  sku
+  quantity
+  inStockQuantity
+  imageUrl
+  productId
+  product {
+    id
+    slug
+    minQuantity
+    maxQuantity
+    price {
+      discountPercent
+    }
+    images {
+      url
+    }
+    availabilityData {
+      availableQuantity
+      inventories {
+        inStockQuantity
+        fulfillmentCenterId
+      }
+    }
+    properties {
+      ...propertyFields
+    }
+  }
+  vendor {
+    id
+    name
+  }
+  placedPrice {
+    ...priceFields
+  }
+  listPrice {
+    ...priceFields
+  }
+  discountTotal {
+    ...priceFields
+  }
+  validationErrors {
+    errorCode
+    errorMessage
+    errorParameters {
+      key
+      value
+    }
+  }
+}

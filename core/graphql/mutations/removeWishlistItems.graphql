@@ -1,0 +1,5 @@
+mutation removeWishlistItems($command: InputRemoveWishlistItemsType!) {
+  removeWishlistItems(command: $command) {
+    ...wishlistItemsFields
+  }
+}

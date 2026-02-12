@@ -1,0 +1,10 @@
+query confirmPhoneNumber($command: InputConfirmPhoneNumberType) {
+    confirmPhoneNumber(command: $command) {
+        succeeded
+        errors {
+            code
+            parameter
+            description
+        }
+    }
+}

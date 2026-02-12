@@ -1,0 +1,5 @@
+ mutation clearShipments($command: InputClearShipmentsType!) {
+  clearShipments(command: $command) {
+    ...cartFields
+  }
+}

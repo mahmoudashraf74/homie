@@ -1,22 +1,24 @@
-query me($withPostalCode: Boolean = false) {
+query me(
+  $withPostalCode: Boolean = false
+) {
 	me {
-		id
-		memberId
-		photoUrl
-		userName
-		email
-		emailConfirmed
-		phoneNumber
-		phoneNumberConfirmed
+    id
+    memberId
+    photoUrl
+    userName
+    email
+    emailConfirmed
+    phoneNumber
+    phoneNumberConfirmed
 		contact {
-			id
-			outerId
-			phones
-			firstName
-			lastName
-			fullName
-			gender
-			birthDate
+      id
+      outerId
+      phones
+      firstName
+      lastName
+      fullName
+      gender
+      birthDate
 			addresses {
 				totalCount
 				items {

@@ -1,0 +1,26 @@
+query branches($first: Int, $after: String, $storeId: String!) {
+  branches(first: $first, after: $after, storeId: $storeId) {
+    totalCount
+    items {
+      id
+      name
+      code
+      branchEnabled
+      address
+      openTime
+      closeTime
+      minimumOrderAmount
+      hasDeliveryZone
+      storeId
+      fulfillmentCenterId
+      outerId
+      location {
+        longitude
+        latitude
+      }
+      zones {
+        id
+      }
+    }
+  }
+}

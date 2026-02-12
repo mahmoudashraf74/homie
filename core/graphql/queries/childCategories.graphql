@@ -1,0 +1,32 @@
+
+query childCategories(
+  $storeId: String!
+  $cultureName: String
+  $categoryId: String
+  $userId: String
+  $currencyCode: String
+  $maxLevel: Int
+  $onlyActive: Boolean
+  $previousOutline: String
+  $productFilter: String
+  $withProperties: Boolean!
+  $withOutlines: Boolean!
+  $withSecondLevelChildCategories: Boolean!
+  $withThirdLevelChildCategories: Boolean!
+) {
+  childCategories(
+    storeId: $storeId
+    cultureName: $cultureName
+    categoryId: $categoryId
+    userId: $userId
+    currencyCode: $currencyCode
+    maxLevel: $maxLevel
+    onlyActive: $onlyActive
+    previousOutline: $previousOutline
+    productFilter: $productFilter
+  ) {
+    childCategories {
+      ...categoryItemFields
+    }
+  }
+}

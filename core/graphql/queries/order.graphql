@@ -1,0 +1,16 @@
+# query order
+# (
+#   $id: String
+#   $number: String
+#   $cultureName: String
+#   $lineItemId: String
+# ) {
+#   order(
+#     id: $id
+#     number: $number
+#     cultureName: $cultureName
+#     lineItemId: $lineItemId
+#   ) {
+#     ...orderFields
+#   }
+# }

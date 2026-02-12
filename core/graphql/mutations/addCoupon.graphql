@@ -1,0 +1,5 @@
+mutation addCoupon($command: InputAddCouponType!) {
+  addCoupon(command: $command) {
+    ...cartFields
+  }
+}

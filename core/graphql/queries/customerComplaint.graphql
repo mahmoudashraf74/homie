@@ -1,0 +1,28 @@
+query customerComplaint(
+    $storeId: String!
+    $userId: String!
+    $after: String
+    $first: Int
+) {
+  customerComplaint(
+      storeId: $storeId
+      userId: $userId
+      after: $after
+      first: $first
+  ) {
+    totalCount
+    items {
+      id
+      createdDate
+      modifiedDate
+      storeId
+      userId
+      userName
+      entityId
+      entityType
+      entityName
+      complaintReason
+      message
+    }
+  }
+}

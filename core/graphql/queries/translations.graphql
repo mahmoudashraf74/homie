@@ -1,0 +1,22 @@
+query translations(
+    $first: Int
+    $after: String
+    $storeId: String
+    $culture: String
+    $channel: String
+) {
+    translations(
+        first: $first
+        after: $after
+        storeId: $storeId
+        culture: $culture
+        channel: $channel
+    ) {
+        items {
+            value
+            lookup {
+                key
+            }
+        }
+    }
+}

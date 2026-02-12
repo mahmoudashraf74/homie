@@ -1,0 +1,21 @@
+query category(
+  $storeId: String!
+  $currencyCode: String!
+  $cultureName: String
+  $id: String!
+  $userId: String!
+  $withProperties: Boolean!
+  $withOutlines: Boolean!
+  $withSecondLevelChildCategories: Boolean!
+  $withThirdLevelChildCategories: Boolean!
+) {
+  category(
+    storeId: $storeId
+    id: $id
+    currencyCode: $currencyCode
+    cultureName: $cultureName
+    userId: $userId
+  ) {
+    ...categoryItemFields
+  }
+}

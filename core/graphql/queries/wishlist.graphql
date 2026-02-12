@@ -1,0 +1,5 @@
+query wishlist($listId: String!, $cultureName: String) {
+  wishlist(listId: $listId, cultureName: $cultureName) {
+    ...wishlistItemsFields
+  }
+}

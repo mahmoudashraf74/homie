@@ -1,0 +1,55 @@
+# fragment orderFields on CustomerOrderType {
+#   id
+#   number
+#   comment
+#   createdDate
+#   status
+#   discounts {
+#     amount {
+#       ...priceFields
+#     }
+#     coupon
+#     description
+#   }
+#   subTotal {
+#     ...priceFields
+#   }
+#   total {
+#     ...priceFields
+#   }
+#   discountTotal {
+#     ...priceFields
+#   }
+#   shippingTotal {
+#     ...priceFields
+#   }
+#   currency {
+#     ...currencyFields
+#   }
+#   items {
+#     ...orderLineItemFields
+#   }
+#   shipments {
+#     shipmentMethodCode
+#     shippingMethod {
+#       typeName
+#     }
+#     price {
+#       ...priceFields
+#     }
+#     deliveryAddress {
+#       ...orderAddressFields
+#     }
+#   }
+#   inPayments {
+#     id
+#     number
+#     paymentMethod {
+#       code
+#       name
+#     }
+#     billingAddress {
+#       ...orderAddressFields
+#     }
+#   }
+# }

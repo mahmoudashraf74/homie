@@ -1,0 +1,38 @@
+query zones($first: Int, $after: String, $storeId: String!) {
+  zones(first: $first, after: $after, storeId: $storeId) {
+    totalCount
+    items {
+      id
+      nameEn
+      nameAr
+      zoneType
+      radius
+      normalShippingFee
+      scheduleShippingFee
+      normalShippingEnabled
+      scheduleShippingEnabled
+      polygonPoints {
+        longitude
+        latitude
+      }
+      circleCenterPoint {
+        longitude
+        latitude
+      }
+      branch {
+        id
+        name
+        code
+        branchEnabled
+        address
+        openTime
+        closeTime
+        minimumOrderAmount
+        hasDeliveryZone
+        storeId
+        fulfillmentCenterId
+        outerId
+      }
+    }
+  }
+}

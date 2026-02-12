@@ -1,0 +1,71 @@
+fragment categoryItemFields on Category {
+  id
+  imgSrc
+  code
+  name
+  priority
+  outline
+  slug
+  path
+  hasParent
+  breadcrumbs {
+    itemId
+    seoPath
+    title
+    typeName
+  }
+  properties @include(if: $withProperties) {
+    ...propertyFields
+  }
+  outlines @include(if: $withOutlines) {
+    items {
+      id
+      name
+    }
+  }
+  childCategories @include(if: $withSecondLevelChildCategories) {
+    id
+    imgSrc
+    code
+    name
+    priority
+    outline
+    slug
+    path
+    hasParent
+    properties @include(if: $withProperties) {
+      ...propertyFields
+    }
+    outlines @include(if: $withOutlines) {
+      items {
+        id
+        name
+      }
+    }
+    childCategories @include(if: $withThirdLevelChildCategories) {
+      id
+      imgSrc
+      code
+      name
+      priority
+      outline
+      slug
+      path
+      hasParent
+      properties @include(if: $withProperties) {
+        ...propertyFields
+      }
+      outlines @include(if: $withOutlines) {
+        items {
+          id
+          name
+        }
+      }
+    }
+  }
+  seoInfo {
+		pageTitle
+		metaKeywords
+		metaDescription
+	}
+}

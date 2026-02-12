@@ -1,0 +1,5 @@
+mutation updateMemberAddressesExtended($command: InputUpdateMemberAddressTypeExtend!) {
+  updateMemberAddressesExtended(command: $command) {
+    id
+  }
+}

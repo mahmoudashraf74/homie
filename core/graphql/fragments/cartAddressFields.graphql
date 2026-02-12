@@ -1,0 +1,17 @@
+fragment cartAddressFields on CartAddressTypeExtend {
+  id
+  name
+  firstName
+  lastName
+  line1
+  city
+  countryCode
+  countryName
+  regionId
+  regionName
+  phone
+  email
+  addressType
+  description
+  outerId
+}

@@ -1,0 +1,18 @@
+query zoneMemberAddresses(
+  $first: Int
+  $after: String
+  $zoneId: String!
+  $userId: String!
+  $withPostalCode: Boolean = false
+) {
+  zoneMemberAddresses(first: $first
+  after: $after
+  zoneId: $zoneId
+  userId: $userId
+) {
+    totalCount
+    items {
+      ...memberAddressFields
+    }
+  }
+}

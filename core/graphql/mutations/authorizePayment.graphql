@@ -1,0 +1,6 @@
+mutation authorizePayment($command: InputAuthorizePaymentType!) {
+  authorizePayment(command: $command) {
+    isSuccess
+    errorMessage
+  }
+}

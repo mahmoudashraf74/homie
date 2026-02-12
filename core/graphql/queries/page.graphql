@@ -1,0 +1,9 @@
+query page($storeId: String!, $id: String!, $cultureName: String!) {
+  page(storeId: $storeId, id: $id, cultureName: $cultureName) {
+    id
+    name
+    relativeUrl
+    permalink
+    content
+  }
+}

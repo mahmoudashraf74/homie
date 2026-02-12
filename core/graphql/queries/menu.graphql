@@ -1,0 +1,32 @@
+query menu(
+  $storeId: String!
+  $cultureName: String!
+  $name: String!
+) {
+  menu(
+    storeId: $storeId
+    cultureName: $cultureName
+    name: $name
+  ) {
+    name
+    outerId
+    itemsExtended {
+      title
+      url
+      icon
+      associatedObjectId
+      associatedObjectName
+      associatedObjectType
+      color
+      childItemsExtended {
+        title
+        url
+        icon
+        associatedObjectId
+        associatedObjectName
+        associatedObjectType
+        color
+      }
+    }
+  }
+}

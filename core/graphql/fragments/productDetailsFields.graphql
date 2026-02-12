@@ -1,0 +1,226 @@
+fragment productDetailsFields on Product {
+	name
+	id
+	code
+	slug
+	outline
+	brandName
+	hasVariations
+	minQuantity
+	maxQuantity
+	imgSrc
+	inWishlist
+	productType
+	prices {
+		discounts {
+			coupon
+			description
+			promotionId
+			amount
+			amountWithTax
+			promotion {
+				id
+				name
+				type
+				description
+			}
+		}
+	}
+	category {
+		id
+		name
+	}
+	associations {
+		items {
+			type
+			product {
+				rating {
+					value
+					reviewCount
+				}
+				category {
+					id
+				}
+				name
+				id
+				code
+				minQuantity
+				maxQuantity
+				inWishlist
+				productType
+				vendor {
+					id
+					name
+				}
+				variations {
+					id
+					price {
+						list {
+							...priceFields
+						}
+						actual {
+							...priceFields
+						}
+					}
+				}
+				hasVariations
+				slug
+				outline
+				imgSrc
+				images {
+					url
+				}
+				description(type: "QuickReview") {
+					content
+					id
+				}
+				availabilityData {
+					isActive
+					isAvailable
+					isBuyable
+					isInStock
+					availableQuantity
+				}
+				price {
+					actual {
+						...priceFields
+					}
+					discountAmount {
+						...priceFields
+					}
+					sale {
+						...priceFields
+					}
+					list {
+						...priceFields
+					}
+					discountPercent
+				}
+				properties {
+					...propertyFields
+				}
+			}
+		}
+	}
+	images {
+		url
+	}
+	assets {
+		name
+		url
+	}
+	breadcrumbs {
+		itemId
+		typeName
+		title
+		seoPath
+	}
+	description {
+		content
+	}
+	descriptions {
+		reviewType
+		content
+	}
+	properties {
+		...propertyFields
+	}
+	variations {
+		id
+		name
+		images {
+			url
+		}
+		minQuantity
+		maxQuantity
+		code
+		productType
+		properties {
+			...propertyFields
+		}
+		vendor {
+			id
+			name
+			rating {
+				value
+				reviewCount
+			}
+		}
+		availabilityData {
+			isActive
+			isAvailable
+			isBuyable
+			isInStock
+			availableQuantity
+		}
+		price {
+			actual {
+				...priceFields
+			}
+			listWithTax {
+				...priceFields
+			}
+			saleWithTax {
+				...priceFields
+			}
+			discountAmount {
+				...priceFields
+			}
+			sale {
+				...priceFields
+			}
+			list {
+				...priceFields
+			}
+		}
+	}
+	vendor {
+		id
+		name
+		rating {
+			value
+			reviewCount
+		}
+	}
+	availabilityData {
+		isActive
+		isAvailable
+		isBuyable
+		isInStock
+		availableQuantity
+	}
+	price {
+		actual {
+			...priceFields
+		}
+		listWithTax {
+			...priceFields
+		}
+		saleWithTax {
+			...priceFields
+		}
+		discountAmount {
+			...priceFields
+		}
+		sale {
+			...priceFields
+		}
+		list {
+			...priceFields
+		}
+		discountPercent
+	}
+	seoInfo {
+		pageTitle
+		metaKeywords
+		metaDescription
+	}
+	rating {
+		value
+		reviewCount
+	}
+	ratingStatistics {
+		rating
+		percentage
+	}
+}

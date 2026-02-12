@@ -1,0 +1,20 @@
+query complaintReasons(
+    $after: String
+    $first: Int
+) {
+  complaintReasons(
+      after: $after
+      first: $first
+  ) {
+    totalCount
+    items {
+      id
+      createdDate
+      modifiedDate
+      createdBy
+      modifiedBy
+      reasonEn
+      reasonAr
+    }
+  }
+}

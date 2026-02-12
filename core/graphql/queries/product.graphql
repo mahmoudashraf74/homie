@@ -1,0 +1,15 @@
+query product(
+  $storeId: String!
+  $currencyCode: String!
+  $cultureName: String
+  $id: String!
+) {
+  product(
+    storeId: $storeId
+    id: $id
+    currencyCode: $currencyCode
+    cultureName: $cultureName
+  ) {
+    ...productDetailsFields
+  }
+}

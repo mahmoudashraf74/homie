@@ -1,0 +1,14 @@
+query store(
+    $domain: String
+) {
+  store(
+      domain: $domain
+  ) {
+    storeId
+    catalogId
+    defaultCurrency {
+      code
+      symbol
+    }
+  }
+}

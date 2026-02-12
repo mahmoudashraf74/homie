@@ -1,0 +1,33 @@
+
+query categories(
+  $storeId: String!
+  $cultureName: String!
+  $query: String
+  $userId: String
+  $currencyCode: String
+  $sort: String
+  $after: String
+  $first: Int
+  $filter: String
+  $withProperties: Boolean!
+  $withOutlines: Boolean!
+  $withSecondLevelChildCategories: Boolean!
+  $withThirdLevelChildCategories: Boolean!
+) {
+  categories(
+    storeId: $storeId
+    cultureName: $cultureName
+    query: $query
+    userId: $userId
+    currencyCode: $currencyCode
+    sort: $sort
+    after: $after
+    first: $first
+    filter: $filter
+  ) {
+    totalCount
+    items {
+      ...categoryItemFields
+    }
+  }
+}

@@ -1,0 +1,32 @@
+query CustomerReviews(
+	$storeId: String!
+	$entityId: String!
+	$entityType: String!
+	$after: String
+	$first: Int
+) {
+	customerReviews(
+		storeId: $storeId
+		entityId: $entityId
+		entityType: $entityType
+		after: $after
+		first: $first
+	) {
+		totalCount
+		items {
+			id
+			createdDate
+			modifiedDate
+			storeId
+			userId
+			userName
+			entityId
+			entityType
+			entityName
+			title
+			review
+			rating
+			reviewStatus
+		}
+	}
+}

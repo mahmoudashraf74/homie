@@ -1,0 +1,8 @@
+mutation setCartChannel($command: InputUpdateCartDynamicPropertiesType!) {
+  updateCartDynamicProperties(command: $command) {
+    dynamicProperties {
+      name
+      value
+    }
+  }
+}

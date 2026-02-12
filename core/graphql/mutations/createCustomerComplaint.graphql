@@ -1,0 +1,10 @@
+mutation createCustomerComplaint($command: CreateCustomerComplaintCommandType!) {
+  createCustomerComplaint(command: $command) {
+    succeeded
+    errors {
+      code
+      description
+      parameter
+    }
+  }
+}

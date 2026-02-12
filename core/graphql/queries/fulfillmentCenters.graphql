@@ -1,0 +1,24 @@
+query fulfillmentCenters(
+  $first: Int!
+  $after: String!
+) {
+  fulfillmentCenters(
+    first: $first
+    after: $after
+  ) {
+    totalCount
+    items {
+      id
+      name
+      description
+      outerId
+      geoLocation
+      shortDescription
+      address {
+        id
+        city
+        phone
+      }
+    }
+  }
+}

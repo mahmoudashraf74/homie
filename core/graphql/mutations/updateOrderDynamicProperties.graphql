@@ -1,0 +1,10 @@
+ mutation updateOrderDynamicProperties($command: InputUpdateOrderDynamicPropertiesType! ) {
+  updateOrderDynamicProperties(
+      command: $command
+  ) {
+    dynamicProperties{
+      name
+      value
+    }
+  }
+}

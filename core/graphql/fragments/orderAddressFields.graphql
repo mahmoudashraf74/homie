@@ -1,0 +1,16 @@
+fragment orderAddressFields on OrderAddressType {
+  id
+  name
+  firstName
+  lastName
+  line1
+  line2
+  city
+  countryCode
+  countryName
+  regionId
+  regionName
+  phone
+  email
+  addressType
+}

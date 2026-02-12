@@ -1,0 +1,5 @@
+mutation addOrUpdateCartPayment($command: InputAddOrUpdateCartPaymentType!) {
+  addOrUpdateCartPayment(command: $command) {
+    ...cartFields
+  }
+}

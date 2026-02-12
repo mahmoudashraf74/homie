@@ -1,0 +1,70 @@
+fragment orderLineItemFields on OrderLineItemType {
+  id
+  imageUrl
+  isGift
+  name
+  productId
+  productType
+  product {
+    availabilityData {
+      isActive
+      isAvailable
+      isBuyable
+      isInStock
+      availableQuantity
+      inventories {
+        inStockQuantity
+        fulfillmentCenterId
+        fulfillmentCenterName
+      }
+    }
+    price {
+      actual{
+        ...priceFields
+      }
+      discountAmount{
+        ...priceFields
+      }
+      sale{
+        ...priceFields
+      }
+      list{
+        ...priceFields
+      }
+      discountPercent
+    }
+    id
+    brandName
+    slug
+    masterVariation {
+      id
+      slug
+    }
+    properties {
+      ...propertyFields
+    }
+  }
+  quantity
+  sku
+  extendedPrice {
+    ...priceFields
+  }
+  placedPrice {
+    ...priceFields
+  }
+  taxTotal {
+    ...priceFields
+  }
+  discountTotal {
+    ...priceFields
+  }
+  outerId
+  vendor {
+    id
+    name
+    rating {
+      value
+      reviewCount
+    }
+  }
+}

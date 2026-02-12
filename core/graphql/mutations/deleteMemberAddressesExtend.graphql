@@ -1,0 +1,5 @@
+mutation deleteMemberAddressesExtend($command: InputDeleteMemberAddressTypeExtend!) {
+  deleteMemberAddressesExtend(command: $command) {
+    id
+  }
+}

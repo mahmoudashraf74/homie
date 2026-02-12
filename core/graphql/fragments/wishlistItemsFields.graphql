@@ -1,0 +1,71 @@
+fragment wishlistItemsFields on WishlistType {
+  name
+  id
+  items {
+    id
+    name
+    imageUrl
+    sku
+    productId
+    quantity
+    salePrice {
+      ...priceFields
+    }
+    listPrice {
+      ...priceFields
+    }
+    productType
+    product {
+      category {
+        id
+      }
+      name
+      id
+      code
+      slug
+      inWishlist
+      outline
+      minQuantity
+      maxQuantity
+      imgSrc
+      images {
+        url
+      }
+      vendor {
+        id
+        name
+      }
+      availabilityData {
+        isActive
+        isAvailable
+        isBuyable
+        isInStock
+        availableQuantity
+        inventories {
+          inStockQuantity
+          reservedQuantity
+          fulfillmentCenterId
+          fulfillmentCenterName
+        }
+      }
+      properties {
+        ...propertyFields
+      }
+      price {
+        actual {
+          ...priceFields
+        }
+        discountAmount {
+          ...priceFields
+        }
+        sale {
+          ...priceFields
+        }
+        list {
+          ...priceFields
+        }
+        discountPercent
+      }
+    }
+  }
+}

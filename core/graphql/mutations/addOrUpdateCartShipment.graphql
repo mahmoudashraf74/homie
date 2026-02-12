@@ -1,0 +1,5 @@
+mutation addOrUpdateCartShipmentExtend($command: InputAddOrUpdateCartShipmentTypeExtend!) {
+  addOrUpdateCartShipmentExtend(command: $command) {
+    ...cartFields
+  }
+}

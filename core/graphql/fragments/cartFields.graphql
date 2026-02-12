@@ -1,0 +1,76 @@
+fragment cartFields on CartType {
+  id
+  itemsQuantity
+  comment
+  dynamicProperties {
+    name
+    value
+  }
+  availableShippingMethods {
+    id
+    code
+    name
+    description
+    optionName
+    price {
+      ...priceFields
+    }
+  }
+  availablePaymentMethods {
+    code
+    name
+    description
+    logoUrl
+  }
+  items {
+    ...lineItemFields
+  }
+  coupons {
+    code
+  }
+  discounts {
+    description
+    amount
+    coupon
+  }
+  shipments {
+    id
+    shipmentMethodCode
+    shipmentMethodOption
+    deliveryAddress {
+      ...cartAddressFields
+    }
+    price {
+      ...priceFields
+    }
+    dynamicProperties {
+      name
+      value
+    }
+  }
+  payments {
+    id
+    paymentGatewayCode
+    billingAddress {
+      ...cartAddressFields
+    }
+  }
+  subTotal {
+    ...priceFields
+  }
+  total {
+    ...priceFields
+  }
+  discountTotal {
+    ...priceFields
+  }
+  shippingTotal {
+    ...priceFields
+  }
+  currency {
+    ...currencyFields
+  }
+  validationErrors(ruleSet: "*") {
+    ...validationErrorFields
+  }
+}

@@ -1,0 +1,22 @@
+query pages(
+  $storeId: String!
+  $after: String!
+  $first: Int!
+  $keyword: String!
+) {
+  pages(
+    storeId: $storeId
+    after: $after
+    first: $first
+    keyword: $keyword
+  ) {
+    totalCount
+    items {
+      id
+      name
+      relativeUrl
+      permalink
+      content
+    }
+  }
+}
