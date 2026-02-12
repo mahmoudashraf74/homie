@@ -1,0 +1,110 @@
+fragment productFields on Product {
+  id
+  name
+  imgSrc
+  slug
+  minQuantity
+  maxQuantity
+  inWishlist
+  images @include(if: $withImages) {
+    url
+  }
+  videos @include(if: $withImages) {
+    items {
+      name
+      thumbnailUrl
+      contentUrl
+      embedUrl
+    }
+  }
+  vendor @include(if: $isList) {
+    id
+    name
+  }
+  price {
+    actual {
+      ...priceFields
+    }
+    list {
+      ...priceFields
+    }
+    discountAmount {
+      ...priceFields
+    }
+    discountPercent
+  }
+  description {
+    content
+  }
+  properties @include(if: $isList) {
+    ...propertyFields
+  }
+  availabilityData {
+    isAvailable
+    availableQuantity
+    inventories @include(if: $withInventory) {
+      fulfillmentCenterId
+      fulfillmentCenterName
+      inStockQuantity
+    }
+  }
+  category @include(if: $isList) {
+    id
+    name
+    path
+    hasParent
+  }
+  breadcrumbs @include(if: $isList) {
+    itemId
+    title
+    typeName
+    seoPath
+  }
+  variations @include(if: $isList) {
+    id
+    name
+    images @include(if: $withImages) {
+      url
+    }
+    minQuantity
+    maxQuantity
+    code
+    productType
+    properties {
+      ...propertyFields
+    }
+    vendor {
+      id
+      name
+      rating {
+        value
+        reviewCount
+      }
+    }
+    availabilityData {
+      isActive
+      isAvailable
+      isBuyable
+      isInStock
+      availableQuantity
+    }
+    price {
+      actual {
+        ...priceFields
+      }
+      discountAmount {
+        ...priceFields
+      }
+      sale {
+        ...priceFields
+      }
+      list {
+        ...priceFields
+      }
+    }
+  }
+  rating {
+    value
+    reviewCount
+  }
+}

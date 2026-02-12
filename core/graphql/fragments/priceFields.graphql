@@ -1,0 +1,6 @@
+fragment priceFields on MoneyType {
+  amount
+  currency {
+    ...currencyFields
+  }
+}
